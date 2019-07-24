@@ -1,0 +1,11 @@
+<view class="page__hd">
+  <view class="page__title">{{datas[index].name}}</view>
+  <view class="page__desc">{{datas[index].introduction}}</view>
+</view>
+
+<view class="weui-cells__title">具体列表：</view>
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell" wx:for="{{datas[index].dataList}}" wx:key="">
+    <view class="weui-cell__bd">{{item}}</view>
+  </view>
+</view>

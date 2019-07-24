@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/knowledge/knowledge",
+    "pages/sortKnowledgeInfo/sortKnowledgeInfo",
+    "pages/about/about"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "backgroundColor": "#fff",
+    "navigationBarTitleText": "垃圾分类小站",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "asserts/images/sort.png",
+        "selectedIconPath": "asserts/images/sort-selected.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/knowledge/knowledge",
+        "iconPath": "asserts/images/book.png",
+        "selectedIconPath": "asserts/images/book-selected.png",
+        "text": "知识"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "iconPath": "asserts/images/info.png",
+        "selectedIconPath": "asserts/images/info-selected.png",
+        "text": "关于"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

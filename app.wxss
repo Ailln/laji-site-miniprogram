@@ -1,0 +1,2 @@
+@import "/asserts/wxss/weui.wxss";
+@import "/asserts/wxss/common.wxss";

@@ -1,0 +1,4 @@
+<view class="page__hd">
+  <view class="page__title">关于</view>
+  <view class="page__desc">本程序主要以《上海市生活垃圾分类投放指引》和《上海市生活垃圾管理条例》为标准进行构建。</view>
+</view>

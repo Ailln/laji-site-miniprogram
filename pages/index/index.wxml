@@ -1,0 +1,58 @@
+<view class="page">
+  <view class="weui-search-bar">
+    <view class="weui-search-bar__form">
+      <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+        <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+          <icon type="clear" size="14"></icon>
+        </view>
+      </view>
+      <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+        <icon class="weui-icon-search" type="search" size="14"></icon>
+        <view class="weui-search-bar__text">请输入垃圾名称</view>
+      </label>
+    </view>
+    <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+  </view>
+  <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
+    <view wx:if="{{queryList.length > 0}}">
+      <view wx:for="{{queryList}}" wx:key="">
+        <view class="weui-cell" hover-class="weui-cell_active" bindtap="openConfirm" data-item="{{item}}">
+          <view class="weui-cell__bd">
+            {{item.value}}
+          </view>
+          <view class="weui-cell__ft">
+            [{{datas[item.class].name}}]
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:else>
+      <navigator url="../knowledge/knowledge" open-type="switchTab" class="weui-cell" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          没有找到
+        </view>
+        <view class="weui-cell__ft">
+          点我查看垃圾分类标准
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <view class="weui-cells searchbar-result" wx:else>
+    <view wx:for="{{hotList}}" wx:key="">
+      <view class="weui-cell" hover-class="weui-cell_active" bindtap="openConfirm" data-item="{{item}}">
+        <view class="weui-cell__bd">
+          {{item.value}}
+          <view class="weui-badge" style="margin-left: 4px;">热</view>
+        </view>
+        <view class="weui-cell__ft">
+          [{{datas[item.class].name}}]
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="page__hd">
+    <button class="weui-btn" type="default" bindtap="toKnowledege">已经收录数据 {{dataCount}} 个</button>
+  </view>
+</view>
